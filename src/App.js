@@ -95,9 +95,9 @@ class App extends Component {
   
 
   dictionaryDetails = (obj) => {
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 3; i++) {
       fetch(
-        `https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20170610T055246Z.0f11bdc42e7b693a.eefbde961e10106a4efa7d852287caa49ecc68cf&lang=en-en&text=${obj[i].word}`
+        `https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20170610T055246Z.0f11bdc42e7b693a.eefbde961e10106a4efa7d852287caa49ecc68cf&lang=en-en&text=${obj[i]}`
       )
         .then((response) => response.json())
         .then((data) => this.setState({ dictionary: data.def[0] }));
